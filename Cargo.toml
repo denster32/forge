@@ -1,0 +1,15 @@
+[package]
+name = "forge"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+reqwest = { version = "0.12", features = ["rustls-tls", "blocking"], default-features = false }
+html5ever = "0.38"
+markup5ever_rcdom = "0.38"
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+strip = true
